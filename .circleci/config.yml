@@ -4,7 +4,7 @@ orbs:
   realmethods: dev-sandbox/realmethods@dev:0.0.2
 
 jobs:
-  generate:
+  generate-app:
     docker:
       - image: 'circleci/node:8.12.0-jessie'
     steps:
@@ -18,4 +18,4 @@ workflows:
   version: 2
   what_to_do:
     jobs:
-      - generate
+      - generate-app

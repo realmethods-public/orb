@@ -25,6 +25,9 @@ commands:
           name: install realmethods CLI
           command: 'sudo npm install -g realmethods_cli'
       - run:
+          name: list out working_directory
+          command: 'sudo ls ${CIRCLE_WORKING_DIRECTORY}'
+      - run:
           name: initialize user for realmethods CLI 
           command: sudo npm-run realmethods_cli init << parameters.api-token >>
 
