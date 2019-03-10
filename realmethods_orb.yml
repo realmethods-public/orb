@@ -2,7 +2,7 @@ version: 2.1
 
 description: |
   API token is from $REALMETHODS_API_TOKEN. This token is obtained from your online account under User Preferences.
-  The source for this Orb is available at https://github.com/realmethods-public/orb.
+  The source for this Orb is available at https://github.com/realmethods-public/orb
 
 commands:
   initialize:
@@ -21,8 +21,8 @@ commands:
           name: install npm-run
           command: 'sudo npm install -g npm-run@latest'    
       - run:
-          name: install rM API
-          command: 'sudo npm install realmethods'
+          name: install rM CLI
+          command: 'sudo npm install realmethods_cli'
       - run:
           name: initialize user for rM CLI 
           command: sudo npm-run realmethods_cli init << api-token >>
