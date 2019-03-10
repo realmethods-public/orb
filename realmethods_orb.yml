@@ -1,50 +1,45 @@
 version: 2.1
 
-description: An orb with some simple ways to help you with your first build.
+description: |
+  API token is from $REALMETHODS_API_TOKEN. This token is obtained from your online account under User Preferences.
+  The source for this Orb is available at https://github.com/realmethods-public/orb
 
 commands:
-  circleci-env-highlights:
-    steps:
-    - run:
-        command: |-
-          echo "TRIGGERER: ${CIRCLE_USERNAME}"
-          echo "BUILD_NUMBER: ${CIRCLE_BUILD_NUM}"
-          echo "BUILD_URL: ${CIRCLE_BUILD_URL}"
-          echo "BRANCH: ${CIRCLE_BRANCH}"
-          echo "RUNNING JOB: ${CIRCLE_JOB}"
-          echo "JOB PARALLELISM: ${CIRCLE_NODE_TOTAL}"
-          echo "CIRCLE_REPOSITORY_URL: ${CIRCLE_REPOSITORY_URL}"
-        name: Show some of the CircleCI runtime env vars
-
-  hello-triggerer:
+  initialize:
+    description: |
+      Initialize the realmethods_cli environment
     parameters:
-      to:
-        default: ${CIRCLE_USERNAME}
+      api-token:
+        description: "A user's API token for the realMethods CLI"
         type: string
+        default: "${REALMETHODS_API_TOKEN}"
     steps:
-    - run: echo "Hello << parameters.to >>"
+      - run:
+          name: install rM CLI
+          command: npm install realmethods_cli
+      - run:
+          name: initialize user for rM CLI 
+          command: realmethods_cli init << api-token >>
 
-  system-info:
-    steps:
-    - run:
-        command: |-
-          echo "uname:" $(uname -a)
-          echo "arch: " $(arch)
-        name: Show system information
-
-executors:
-  default:
-    docker:
-    - image: circleci/buildpack-deps:<< parameters.tag >>
+  generate_app:
+    description: |
+      Generate a complete application using the directives of user provided YAML file.
     parameters:
-      tag:
-        default: curl-browsers
+      generation-yaml-file:
+        description: "YAML file containing the application generation directives"
         type: string
-
+        default: "${GENERATION_YAML_FILE}"
+    steps:
+      - run:
+          name: Generate the application
+          command: realmethods_cli app_generate << parameters.generation-yaml-file >>
 jobs:
-  hello-build:
-    executor: default
+  appgen:
+    description: |
+      Check out code, install realMethods CLI, initialize with the user API token, and generate using the provided generation_yaml file
+    docker:
+      - image: circleci/node:8.12.0-jessie      
     steps:
-    - hello-triggerer
-    - circleci-env-highlights
-    - system-info
+      - checkout
+      - initialize
+      - generate_app
