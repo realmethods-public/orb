@@ -12,7 +12,7 @@ jobs:
       - realmethods/initialize:
           api-token: "sny6iLHAH4SMJU1F"
       - realmethods/generate_app:
-          generation-yaml-file: "samples/yamls/generate-springnosql.yml"
+          generation-yaml-file: "orb/samples/yamls/generate-springnosql.yml"
       
 
 workflows:
