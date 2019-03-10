@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  hello: dev-sandbox/realmethods_orb@dev:0.0.2
+  hello: dev-sandbox/realmethods@dev:0.0.2
 
 workflows:
   hello-workflow:
