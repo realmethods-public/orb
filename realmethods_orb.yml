@@ -14,7 +14,8 @@ commands:
         type: string
         default: "${REALMETHODS_API_TOKEN}"
     steps:
-      - checkout
+      - checkout:
+          path: "~/${CIRCLE_PROJECT_REPONAME}"
       - run:
           name: update npm
           command: 'sudo npm install -g npm@latest'    
@@ -42,7 +43,7 @@ commands:
     steps:
       - run:
           name: Generate the application
-          command: realmethods_cli app_generate ${CIRCLE_WORKING_DIRECTORY}/<< parameters.generation-yaml-file >>
+          command: realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >>
 jobs:
   appgen:
     description: |
