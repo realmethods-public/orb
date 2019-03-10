@@ -12,7 +12,8 @@ jobs:
           api-token: "sny6iLHAH4SMJU1F"
       - realmethods/generate_app:
           generation-yaml-file: "samples/yamls/generate-springnosql.yml"
-      
+          git-params-file: "samples/git/test.git.yml"
+          app-options-file: "samples/options/remote/SpringMongoDB.options.json"
 
 workflows:
   version: 2

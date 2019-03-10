@@ -40,6 +40,14 @@ commands:
         description: "YAML file containing the application generation directives"
         type: string
         default: "${GENERATION_YAML_FILE}"
+      git-params-file:
+        description: "YAML file containing the Git directives"
+        type: string
+        default: "${GIT_PARAMS_FILE}"
+      app-options-file:
+        description: "JSON file containing the application options"
+        type: string
+        default: "${APP_OPTIONS_FILE}"
     steps:
       - run:
           name: Generate the application
