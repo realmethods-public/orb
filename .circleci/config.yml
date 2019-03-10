@@ -10,6 +10,6 @@ workflows:
 
     jobs:
       - realmethods/appgen
-        api-token: "qvQeoOQYcRSYBy7v"
-        generation-yaml-file: "./samples/yamls/generate-springnosql.yml"
+            api-token: "qvQeoOQYcRSYBy7v"
+            generation-yaml-file: "./samples/yamls/generate-springnosql.yml"
       
