@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - realmethods/initialize:
-          api-token: "qvQeoOQYcRSYBy7v"
+          api-token: "sny6iLHAH4SMJU1F"
       - realmethods/generate_app:
           generation-yaml-file: "samples/yamls/generate-springnosql.yml"
       
