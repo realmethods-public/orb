@@ -3,13 +3,14 @@ version: 2.1
 orbs:
   realmethods: dev-sandbox/realmethods@dev:0.0.2
 
+jobs:
+  environment:
+    api-token: "qvQeoOQYcRSYBy7v"
+    generation-yaml-file: "./samples/yamls/generate-springnosql.yml"
 
 workflows:
   realmethods-workflow:
 
     jobs:
-      environment:
-        api-token: "qvQeoOQYcRSYBy7v"
-        generation-yaml-file: "./samples/yamls/generate-springnosql.yml"
       - realmethods/appgen
       
