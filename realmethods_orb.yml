@@ -51,7 +51,7 @@ commands:
     steps:
       - run:
           name: Generate the application
-          command: realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >>
+          command: realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >>
 jobs:
   appgen:
     description: |
