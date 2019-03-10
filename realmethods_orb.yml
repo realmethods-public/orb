@@ -21,6 +21,9 @@ commands:
           name: install npm-run
           command: 'sudo npm install -g npm-run@latest'    
       - run:
+          name: install rM API
+          command: 'sudo npm install realmethods'
+      - run:
           name: install rM CLI
           command: 'sudo npm install realmethods_cli'
       - run:
