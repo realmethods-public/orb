@@ -1,12 +1,16 @@
 version: 2.1
-description: A foo orb
 
-commands:
-  hello:
-    description: Greet the user politely
+executors:
+  default:
     parameters:
-      username:
+      tag:
         type: string
-        description: A name of the user to greet
+        default: "curl-browsers"
+      docker:
+        - image:  circleci/buildpack-deps:parameters.tag
+
+jobs:
+  hello-build:
+    executor: default
     steps:
-      - run: "echo Hello << parameters.username >>"
+      - run: echo "Hello, build!"
