@@ -3,13 +3,20 @@ version: 2.1
 orbs:
   realmethods: dev-sandbox/realmethods@dev:0.0.2
 
+jobs:
+  generate:
+    docker:
+      - image: 'circleci/node:8.12.0-jessie '
+    steps:
+      - checkout
+      - realmethods/initialize:
+          api-token: "qvQeoOQYcRSYBy7v"
+      - realmethods/generate_app:
+          generation-yaml-file: "samples/yamls/generate-springnosql.yml"
+      
 
 workflows:
-  realmethods-workflow:
-
+  version: 2
+  what_to_do:
     jobs:
-      - generate_app
-        steps:
-          - realmethods/appgen
-              api-token: "qvQeoOQYcRSYBy7v"
-              generation-yaml-file: "samples/yamls/generate-springnosql.yml"
+      - generate
