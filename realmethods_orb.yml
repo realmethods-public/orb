@@ -22,7 +22,7 @@ commands:
           command: 'sudo npm install realmethods_cli'
       - run:
           name: initialize user for rM CLI 
-          command: realmethods_cli init << api-token >>
+          command: sudo realmethods_cli init << api-token >>
 
   generate_app:
     description: |
