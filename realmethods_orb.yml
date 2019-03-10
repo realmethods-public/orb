@@ -15,8 +15,11 @@ commands:
         default: "${REALMETHODS_API_TOKEN}"
     steps:
       - run:
+          name: Update npm
+          command: 'sudo npm install -g npm@latest'    
+      - run:
           name: install rM CLI
-          command: npm install realmethods_cli
+          command: 'sudo npm install realmethods_cli'
       - run:
           name: initialize user for rM CLI 
           command: realmethods_cli init << api-token >>
