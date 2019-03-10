@@ -38,7 +38,7 @@ commands:
     steps:
       - run:
           name: Generate the application
-          command: realmethods_cli app_generate << parameters.generation-yaml-file >>
+          command: realmethods_cli app_generate ${CIRCLE_WORKING_DIRECTORY}/<< parameters.generation-yaml-file >>
 jobs:
   appgen:
     description: |
