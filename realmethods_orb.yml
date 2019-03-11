@@ -74,10 +74,7 @@ commands:
 #######################################################################      
       - run:
           name: Generate the application
-          command: sudo realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> - >
-                        -g ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> - >
-                        -o ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >> - >
-                        -m ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.model-identifier >> - >
+          command: sudo realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> -g ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> -o ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >> -m ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.model-identifier >>
 
 jobs:
   appgen:
