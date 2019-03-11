@@ -77,7 +77,7 @@ jobs:
 ##      - realmethods/generate_app:
 ##          generation-yaml-file: "samples/yamls/generate-sparkmicroweb.yml"
 ##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/remote/SparkMicroWeb.options.json"
+          app-options-file: "samples/options/remote/SparkMicroWeb.options.json"
 
 workflows:
   version: 2
