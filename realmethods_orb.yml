@@ -36,10 +36,6 @@ commands:
     description: |
       Generate a complete application using the directives of user provided YAML file.
     parameters:
-      api-token:
-        description: "A user's API token for the realMethods CLI"
-        type: string
-        default: "${REALMETHODS_API_TOKEN}"
       generation-yaml-file:
         description: "YAML file containing the application generation directives"
         type: string
@@ -53,26 +49,9 @@ commands:
         type: string
         default: "${APP_OPTIONS_FILE}"
     steps:
-      - checkout:
-          path: "~/${CIRCLE_PROJECT_REPONAME}"
-      - run:
-          name: update npm
-          command: 'sudo npm install -g npm@latest'    
-      - run:
-          name: install npm-run
-          command: 'sudo npm install -g npm-run@latest'    
-      - run:
-          name: install realmethods CLI
-          command: 'sudo npm install -g realmethods_cli'
-      - run:
-          name: list out working_directory
-          command: 'sudo ls ~/${CIRCLE_PROJECT_REPONAME}'
-      - run:
-          name: initialize user for realmethods CLI 
-          command: sudo npm-run realmethods_cli init << parameters.api-token >>
       - run:
           name: Generate the application
-          command: realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >>
+          command: sudo realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >>
 jobs:
   appgen:
     description: |
