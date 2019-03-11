@@ -2,5 +2,5 @@ version:            1.0
 saveParams:
     name:           Reference Management MOdel
     description:    Describes a referrer and reference system
-modelPath:          ./samples/models/
+modelPath:          ${CIRCLE_PROJECT_REPONAME}/samples/models/
 modelFile:			reference_management.xmi
