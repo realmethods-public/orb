@@ -61,3 +61,4 @@ jobs:
     steps:
       - initialize
       - generate_app
+      
