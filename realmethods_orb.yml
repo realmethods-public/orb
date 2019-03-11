@@ -58,7 +58,7 @@ commands:
         type: string
         default: "${APP_OPTIONS_FILE}"
       model-identifier:
-        description: "Either the realMethods system ID of previous registered model, or the name of YAML that contains model details"
+        description: "Either the realMethods system ID of previous registered model, or the path of a model file"
         type: string
         default: "${MODEL_IDENTIFIER}"
         
