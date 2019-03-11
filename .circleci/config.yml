@@ -94,4 +94,3 @@ workflows:
   what_to_do:
     jobs:
       - generate-app
- 
