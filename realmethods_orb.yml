@@ -1,13 +1,23 @@
+# This code is licensed from CircleCI to the user under the MIT license. See
+# https://circleci.com/orbs/registry/licensing for details.
 version: 2.1
 
 description: |
-  API token is from $REALMETHODS_API_TOKEN. This token is obtained from your online account under User Preferences.
-  The source for this Orb is available at https://github.com/realmethods-public/orb.
-
+  A CircleCI Orb to invoke the realMethods Application Generation Platform to generate MVP quality applications 
+  based on a single business model and one of realMethods supported technology stacks.  Model format support includes
+  UML, XMI, Eclipse Model Framework, and SQL Scripts.  Supported technology stacks include Angular7, Django, Spring Boot, 
+  AWS Lambda, Google Functions, ASP.NET, Spark Microweb and Struts2. Examples of models, generation YAML files, Git parameter
+  files and application options files can be found at https://github.com/realmethods-public/orb.  
+  
 commands:
+
+
   initialize:
     description: |
-      Initialize the realmethods_cli environment
+      Command to initialize realMethods orb by providing your
+      API token. This token is obtained from your online account 
+      under User Preferences. The source for this Orb is available 
+      at https://github.com/realmethods-public/orb.
     parameters:
       api-token:
         description: "A user's API token for the realMethods CLI"
@@ -16,13 +26,13 @@ commands:
     steps:
       - checkout:
           path: "~/${CIRCLE_PROJECT_REPONAME}"
-      - run:
+      - run:                                                    
           name: update npm
           command: 'sudo npm install -g npm@latest'    
-      - run:
+      - run:                                                    # run using npm-run
           name: install npm-run
           command: 'sudo npm install -g npm-run@latest'    
-      - run:
+      - run:                                 
           name: install realmethods CLI
           command: 'sudo npm install -g realmethods_cli'
       - run:
@@ -32,9 +42,11 @@ commands:
           name: initialize user for realmethods CLI 
           command: sudo npm-run realmethods_cli init << parameters.api-token >>
 
+
   generate_app:
     description: |
-      Generate a complete application using the directives of user provided YAML file.
+      Command to generate an application by providing a generation YAML file, model file, 
+      Git parameters in a file, and app options in a JSON file.
     parameters:
       generation-yaml-file:
         description: "YAML file containing the application generation directives"
@@ -48,18 +60,30 @@ commands:
         description: "JSON file containing the application options"
         type: string
         default: "${APP_OPTIONS_FILE}"
+        
     steps:
+#######################################################################
+## install dos2unix to convert uploaded files 
+## as required for processing
+#######################################################################
       - run: sudo apt-get install dos2unix
+      
+#######################################################################
+## call the realmethods CLI to generate the application
+#######################################################################      
       - run:
           name: Generate the application
           command: sudo realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >>
+
 jobs:
   appgen:
     description: |
       Check out code, install realMethods CLI, initialize with the user API token, and generate using the provided generation_yaml file
     docker:
-      - image: circleci/node:8.12.0-jessie      
+      - image: circleci/node:8.12.0-jessie      # any NodeJS 8 version will work
     steps:
-      - initialize
-      - generate_app
-      
+      - initialize								# initialize the realmethods CLI
+      - generate_app							# generate application command
+  
+
+  
