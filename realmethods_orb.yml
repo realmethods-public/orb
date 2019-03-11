@@ -57,6 +57,10 @@ commands:
         description: "JSON file containing the application options"
         type: string
         default: "${APP_OPTIONS_FILE}"
+      model-identifier:
+        description: "Either the realMethods system ID of previous registered model, or the name of YAML that contains model details"
+        type: string
+        default: "${MODEL_IDENTIFIER}"
         
     steps:
 #######################################################################
@@ -70,7 +74,10 @@ commands:
 #######################################################################      
       - run:
           name: Generate the application
-          command: sudo realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >>
+          command: sudo realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> - >
+                        -g ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> - >
+                        -o ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >> - >
+                        -m ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.model-identifier >> - >
 
 jobs:
   appgen:

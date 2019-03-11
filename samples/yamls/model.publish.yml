@@ -1,6 +1,6 @@
 version:            1.0
 saveParams:
-    name:           Bowling UML
-    description:    UML Version of Model
+    name:           Reference Management MOdel
+    description:    Describes a referrer and reference system
 modelPath:          ./samples/models/
-modelFile:			foobar.uml
+modelFile:			reference_management.xmi

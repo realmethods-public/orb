@@ -24,61 +24,71 @@ jobs:
           generation-yaml-file: "samples/yamls/generate-django.yml"
           git-params-file: "samples/git/test.git.yml"
           app-options-file: "samples/options/remote/Django.options.json"
+          model-identifier: "samples/yamls/remote/mode.publish.yml"
           
 ## Angular7          
 ##      - realmethods/generate_app:
 ##          generation-yaml-file: "samples/yamls/generate-angular.yml"
 ##          git-params-file: "samples/git/test.git.yml"
 ##          app-options-file: "samples/options/remote/Angular7MongoDB.options.json"
-          
+##          model-identifier: "samples/yamls/remote/mode.publish.yml"          
+
 ## ASP.NET          
 ##      - realmethods/generate_app:
 ##          generation-yaml-file: "samples/yamls/generate-aspdotnet.yml"
 ##          git-params-file: "samples/git/test.git.yml"
 ##          app-options-file: "samples/options/remote/ASPNETCore.options.json"
+##          model-identifier: "samples/yamls/remote/mode.publish.yml"
           
 # Google Functions          
 ##      - realmethods/generate_app:
 ##          generation-yaml-file: "samples/yamls/generate-googlefunctions.yml"
 ##          git-params-file: "samples/git/test.git.yml"
 ##          app-options-file: "samples/options/remote/GoogleFunctions.options.json"
-          
+##          model-identifier: "samples/yamls/remote/mode.publish.yml"
+           
 ## AWS Lambda using MySQL          
 ##      - realmethods/generate_app:
 ##          generation-yaml-file: "samples/yamls/generate-lambdacore.yml"
 ##          git-params-file: "samples/git/test.git.yml"
 ##          app-options-file: "samples/options/remote/Lambda.options.json"
-          
+##          model-identifier: "samples/yamls/remote/mode.publish.yml"
+           
 ## AWS Lambda using MongoDB
 ##      - realmethods/generate_app:
 ##          generation-yaml-file: "samples/yamls/generate-lambdanosql.yml"
 ##          git-params-file: "samples/git/test.git.yml"
 ##          app-options-file: "samples/options/remote/LambdaNoSQL.options.json"
-          
+##          model-identifier: "samples/yamls/remote/mode.publish.yml"
+           
 ## Spring Boot using MySQL          
 ##      - realmethods/generate_app:
 ##          generation-yaml-file: "samples/yamls/generate-springcore.yml"
 ##          git-params-file: "samples/git/test.git.yml"
 ##          app-options-file: "samples/options/remote/SpringCore.options.json"
-           
+##          model-identifier: "samples/yamls/remote/mode.publish.yml"
+            
 ## Spring Boot using MongoDB
 ##      - realmethods/generate_app:
 ##          generation-yaml-file: "samples/yamls/generate-springnosql.yml"
 ##          git-params-file: "samples/git/test.git.yml"
 ##          app-options-file: "samples/options/remote/SpringMongoDB.options.json"
-
+##          model-identifier: "samples/yamls/remote/mode.publish.yml"
+ 
 ## Struts2 using MySQL
 ##      - realmethods/generate_app:
 ##          generation-yaml-file: "samples/yamls/generate-struts2.yml"
 ##          git-params-file: "samples/git/test.git.yml"
 ##          app-options-file: "samples/options/remote/Struts2.options.json"
-
+##          model-identifier: "samples/yamls/remote/mode.publish.yml"
+ 
 ## Spark Microweb using MySQL
 ##      - realmethods/generate_app:
 ##          generation-yaml-file: "samples/yamls/generate-sparkmicroweb.yml"
 ##          git-params-file: "samples/git/test.git.yml"
 ##          app-options-file: "samples/options/remote/SparkMicroWeb.options.json"
-
+##          model-identifier: "samples/yamls/remote/mode.publish.yml"
+ 
 workflows:
   version: 2
   what_to_do:
