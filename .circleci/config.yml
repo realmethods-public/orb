@@ -91,6 +91,6 @@ jobs:
  
 workflows:
   version: 2
-  what_to_do:
+  app_gen_workflow:
     jobs:
       - generate-app
