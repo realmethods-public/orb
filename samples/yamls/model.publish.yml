@@ -1,6 +1,7 @@
-version:            1.0
+version:             1.0
 saveParams:
-    name:           Reference Management MOdel
-    description:    Describes a referrer and reference system
+    name:            Bowling UML
+    description:     UML Version of Model
 modelPath:          ./samples/models/
-modelFile:			reference_management.xmi
+modelFile:			 foobar.uml
+javaRootPackageName: if this model was a Java JAR file, this field would need to be set

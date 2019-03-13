@@ -2,7 +2,7 @@
 
 ![alt text](http://www.realmethods.com/img/circleci_realmethods_orb.png)
 
-The realMethods Orb is a simple yet powerful way for you to leverage CircleCI to automate the generation of MVP quality applications that themselves can be deployed to, tested, and run through your CI/CD pipeline on CircleCI.
+The realMethods Orb is a simple, yet powerful way for you to leverage CircleCI to automate the generation of MVP-quality applications that can be deployed to, tested, and run through your CI/CD pipeline on CircleCI.
 
 
 #### Version
@@ -32,8 +32,7 @@ Click [here](http://www.realmethods.com) to create an account and access a uniqu
 
 ## Application Generation Configuration Examples 
 
-There are 1 mandatory and 3 options files that are required in order to invoke application generation.  The mandatory can optionally include a reference to the other 3 optional files.  If any of the option files is included, 
-
+To invoke application generation, one mandatory file is required, along with three optional files the mandatory file can reference.  If any of the option files is included as an input argument, the related internal reference of the mandatory is ignored. 
 
 Visit [https://github.com/realmethods-public/orb](https://github.com/realmethods-public/orb) to view all sample model and config files.
 
