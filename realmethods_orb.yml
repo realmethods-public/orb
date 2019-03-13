@@ -50,15 +50,12 @@ commands:
       git-params-file:
         description: "YAML file containing the Git params"
         type: string
-        default: "${GIT_PARAMS_FILE}"
       app-options-file:
         description: "JSON file containing the application options"
         type: string
-        default: "${APP_OPTIONS_FILE}"
       model-identifier:
         description: "Either the realMethods system ID of previous registered model, or the path of a model file"
         type: string
-        default: "${MODEL_IDENTIFIER}"
         
     steps:
 #######################################################################
@@ -74,15 +71,7 @@ commands:
           name: Generate the application
           command: sudo realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> -g ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> -o ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >> -m ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.model-identifier >>
 
-jobs:
-  appgen:
-    description: |
-      Check out code, install realMethods CLI, initialize with the user API token, and generate using the provided generation_yaml file
-    docker:
-      - image: circleci/node:8.12.0-jessie      # any NodeJS 8 version will work
-    steps:
-      - initialize								# initialize the realmethods CLI
-      - generate_app							# generate application command
+
   
 
   
