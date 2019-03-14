@@ -33,7 +33,7 @@ commands:
       - run:
           name: Establish SUDO env variable requirement
           command: |
-            '[ -w /usr/local/bin ] && SUDO="" || SUDO=sudo`
+            '[ -w /usr/local/bin ] && SUDO="" || SUDO=sudo'
       - run:                                                    
           name: update npm
           command: '$SUDO npm install -g npm@latest' 
