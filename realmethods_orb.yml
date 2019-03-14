@@ -32,8 +32,7 @@ commands:
 
       - run:
           name: Establish SUDO env variable requirement
-          command: |
-            'set SUDO = [$EUID == 0] && echo="sudo" || echo=""'
+          command: 'set SUDO = [$EUID == 0] && echo="sudo" || echo=""'
       - run:                                                    
           name: update npm
           command: '$SUDO npm install -g npm@latest' 
