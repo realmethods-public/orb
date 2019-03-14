@@ -32,8 +32,12 @@ commands:
 
       - run:
           name: Establish SUDO env variable requirement
-          command: '[$EUID == 0] && SUDO="not-sudo" || SUDO="sudo"'
-
+          command: |
+            if [ $EUID == 0 ]; then
+              SUDO="not-sudo"
+            else
+              SUDO="sudo"
+            fi
       - run:
           name: echo SUDO env
           command: 'echo $SUDO'
