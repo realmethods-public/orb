@@ -9,7 +9,7 @@ jobs:
       - image: 'circleci/node:8.12.0-jessie'
     steps:
       - realmethods/initialize:
-          api-token: "sny6iLHAH4SMJU1F"
+          api-token: sny6iLHAH4SMJU1F
 ##################################################################
 ## Multiple app generations are included to give an example of
 ## usage for each supported technology stacks. Only include the 
