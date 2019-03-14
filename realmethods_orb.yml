@@ -34,9 +34,9 @@ commands:
           name: Establish SUDO env variable requirement
           command: |
             if [ $EUID == 0 ]; then
-              SUDO=""
+              SUDO="not-sudo-needed"
             else
-              SUDO="sudo"
+              SUDO="need-sudo"
             fi
       - run:
           name: echo SUDO env
