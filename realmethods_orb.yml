@@ -46,7 +46,7 @@ commands:
           
       - run:                                                    
           name: update npm
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo' &&  '$SUDO npm install -g npm@latest' 
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g npm@latest' 
 
       - run:                                                    
           name: install npm-run
