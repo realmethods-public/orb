@@ -34,10 +34,10 @@ commands:
           name: Establish SUDO env variable requirement
           command: |
             if [ $EUID == 0 ]; then
-              SUDO="not-sudo-needed"
+              set SUDO="not-sudo-needed"
               echo not-needed
             else
-              SUDO="need-sudo"
+              set SUDO="need-sudo"
               echo needed
             fi
       - run:
