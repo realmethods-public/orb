@@ -5,11 +5,14 @@ orbs:
 
 jobs:
   generate-app:
+  
     docker:
       - image: 'circleci/node:8.12.0-jessie'
+
     steps:
       - realmethods/initialize:
           api-token: sny6iLHAH4SMJU1F
+
 ##################################################################
 ## Multiple app generations are included to give an example of
 ## usage for each supported technology stacks. Only include the 
@@ -21,11 +24,11 @@ jobs:
 
 ## Django
       - realmethods/generate_app:
-          generation-yaml-file: samples/yamls/generate-django.yml
-          git-params-file: samples/git/test.git.yml
-          app-options-file: samples/options/remote/Django.options.json
-          model-identifier: samples/models/reference_management.xmi
-          
+          generation-yaml-file: "samples/yamls/generate-django.yml"
+          git-params-file: "samples/git/test.git.yml"
+          app-options-file: "samples/options/remote/Django.options.json"
+          model-identifier: "samples/models/reference_management.xmi"
+
 ## Angular7          
 ##      - realmethods/generate_app:
 ##          generation-yaml-file: "samples/yamls/generate-angular.yml"

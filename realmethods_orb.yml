@@ -21,8 +21,7 @@ commands:
       api-token:
         description: "A user's API token for the realMethods CLI"
         type: env_var_name
-        default: REALMETHODS_API_TOKEN
-        
+
     steps:
 #######################################################################
 ## checkout the relevant files to a directory referenced by
@@ -33,27 +32,27 @@ commands:
 
       - run:                                                    
           name: update npm
-          command: npm install -g npm@latest 
+          command: 'npm install -g npm@latest' 
 
       - run:                                                    
           name: install npm-run
-          command: npm install -g npm-run@latest    
+          command: 'npm install -g npm-run@latest'    
           
       - run:                                 
           name: install realmethods CLI
-          command: npm install -g realmethods_cli
+          command: 'npm install -g realmethods_cli'
           
       - run:
           name: initialize user for realmethods CLI 
-          command: npm-run realmethods_cli init << parameters.api-token >>
+          command: 'npm-run realmethods_cli init << parameters.api-token >>'
 
       - run: 
           name: update the apt-get package index
-          command: apt-get update
+          command: 'apt-get update'
 
       - run: 
           name: install dos2unix to convert uploaded files
-          comand: apt-get install -y dos2unix
+          command: 'apt-get install -y dos2unix'
 
   generate_app:
     description: |
@@ -62,17 +61,17 @@ commands:
     parameters:
       generation-yaml-file:
         description: "YAML file containing the application generation directives"
-        type: env_var_name
-        default: GENERATION_YAML_FILE
+        type: string
+        default: "${GENERATION_YAML_FILE}"
       git-params-file:
         description: "YAML file containing the Git params"
-        type: env_var_name
+        type: string
       app-options-file:
         description: "JSON file containing the application options"
-        type: env_var_name
+        type: string
       model-identifier:
         description: "Either the realMethods system ID of previous registered model, or the path of a model file"
-        type: env_var_name
+        type: string
         
     steps:
       
@@ -81,7 +80,7 @@ commands:
 #######################################################################      
       - run:
           name: Generate the application
-          command: realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> -g ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> -o ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >> -m ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.model-identifier >>
+          command: 'realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> -g ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> -o ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >> -m ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.model-identifier >>'
 
 
   
