@@ -35,8 +35,10 @@ commands:
           command: |
             if [ $EUID == 0 ]; then
               SUDO="not-sudo-needed"
+              echo not-needed
             else
               SUDO="need-sudo"
+              echo needed
             fi
       - run:
           name: echo SUDO env
