@@ -21,7 +21,7 @@ The realMethods Orb is a simple, yet powerful way for you to leverage CircleCI t
           - realmethods/initialize:
               api-token: "PUT_YOUR_API_TOKEN_HERE"
 
-Click [here](http://www.realmethods.com) to create an account and access a unique API token.
+Click [here](http://www.realmethods.com/developer.html) to create an account and access a unique API token.
 
 #### Workflows
 	workflows:
