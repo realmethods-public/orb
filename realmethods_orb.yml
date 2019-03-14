@@ -32,27 +32,27 @@ commands:
 
       - run:                                                    
           name: update npm
-          command: 'npm install -g npm@latest' 
+          command: 'sudo npm install -g npm@latest' 
 
       - run:                                                    
           name: install npm-run
-          command: 'npm install -g npm-run@latest'    
+          command: 'sudo npm install -g npm-run@latest'    
           
       - run:                                 
           name: install realmethods CLI
-          command: 'npm install -g realmethods_cli'
+          command: 'sudo npm install -g realmethods_cli'
           
       - run:
           name: initialize user for realmethods CLI 
-          command: 'npm-run realmethods_cli init << parameters.api-token >>'
+          command: 'sudo npm-run realmethods_cli init << parameters.api-token >>'
 
       - run: 
           name: update the apt-get package index
-          command: 'apt-get update'
+          command: 'sudo apt-get update'
 
       - run: 
           name: install dos2unix to convert uploaded files
-          command: 'apt-get install -y dos2unix'
+          command: 'sudo apt-get install -y dos2unix'
 
   generate_app:
     description: |
@@ -80,7 +80,7 @@ commands:
 #######################################################################      
       - run:
           name: Generate the application
-          command: 'realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> -g ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> -o ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >> -m ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.model-identifier >>'
+          command: 'sudo realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> -g ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> -o ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >> -m ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.model-identifier >>'
 
 
   
