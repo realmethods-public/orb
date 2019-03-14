@@ -30,29 +30,33 @@ commands:
       - checkout:
           path: "~/${CIRCLE_PROJECT_REPONAME}"
 
+      - run:
+          name: Establish SUDO env variable requirement
+          command: |
+            '[ -w /usr/local/bin ] && SUDO="" || SUDO=sudo`
       - run:                                                    
           name: update npm
-          command: 'sudo npm install -g npm@latest' 
+          command: '$SUDO npm install -g npm@latest' 
 
       - run:                                                    
           name: install npm-run
-          command: 'sudo npm install -g npm-run@latest'    
+          command: '$SUDO npm install -g npm-run@latest'    
           
       - run:                                 
           name: install realmethods CLI
-          command: 'sudo npm install -g realmethods_cli'
+          command: '$SUDO npm install -g realmethods_cli'
           
       - run:
           name: initialize user for realmethods CLI 
-          command: 'sudo npm-run realmethods_cli init << parameters.api-token >>'
+          command: '$SUDO npm-run realmethods_cli init << parameters.api-token >>'
 
       - run: 
           name: update the apt-get package index
-          command: 'sudo apt-get update'
+          command: '$SUDO apt-get update'
 
       - run: 
           name: install dos2unix to convert uploaded files
-          command: 'sudo apt-get install -y dos2unix'
+          command: '$SUDO apt-get install -y dos2unix'
 
   generate_app:
     description: |
