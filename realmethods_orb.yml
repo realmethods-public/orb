@@ -35,10 +35,10 @@ commands:
           command: |
             if [ $EUID == 0 ]; then
               export SUDO="not-sudo-needed"
-              echo not-needed
+              echo $SUDO
             else
               export SUDO="need-sudo"
-              echo needed
+              echo $SUDO
             fi
       - run:
           name: echo SUDO env
