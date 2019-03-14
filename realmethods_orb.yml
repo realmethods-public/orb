@@ -20,23 +20,40 @@ commands:
     parameters:
       api-token:
         description: "A user's API token for the realMethods CLI"
-        type: string
-        default: "${REALMETHODS_API_TOKEN}"
+        type: env_var_name
+        default: REALMETHODS_API_TOKEN
+        
     steps:
+#######################################################################
+## checkout the relevant files to a directory referenced by
+## ${CIRCLE_PROJECT_REPONAME}
+#######################################################################
       - checkout:
           path: "~/${CIRCLE_PROJECT_REPONAME}"
+
       - run:                                                    
           name: update npm
-          command: 'sudo npm install -g npm@latest'    
-      - run:                                                    # run using npm-run
+          command: npm install -g npm@latest 
+
+      - run:                                                    
           name: install npm-run
-          command: 'sudo npm install -g npm-run@latest'    
+          command: npm install -g npm-run@latest    
+          
       - run:                                 
           name: install realmethods CLI
-          command: 'sudo npm install -g realmethods_cli'
+          command: npm install -g realmethods_cli
+          
       - run:
           name: initialize user for realmethods CLI 
-          command: sudo npm-run realmethods_cli init << parameters.api-token >>
+          command: npm-run realmethods_cli init << parameters.api-token >>
+
+      - run: 
+          name: update the apt-get package index
+          command: apt-get update
+
+      - run: 
+          name: install dos2unix to convert uploaded files
+          comand: apt-get install -y dos2unix
 
   generate_app:
     description: |
@@ -45,31 +62,26 @@ commands:
     parameters:
       generation-yaml-file:
         description: "YAML file containing the application generation directives"
-        type: string
-        default: "${GENERATION_YAML_FILE}"
+        type: env_var_name
+        default: GENERATION_YAML_FILE
       git-params-file:
         description: "YAML file containing the Git params"
-        type: string
+        type: env_var_name
       app-options-file:
         description: "JSON file containing the application options"
-        type: string
+        type: env_var_name
       model-identifier:
         description: "Either the realMethods system ID of previous registered model, or the path of a model file"
-        type: string
+        type: env_var_name
         
     steps:
-#######################################################################
-## install dos2unix to convert uploaded files 
-## as required for processing
-#######################################################################
-      - run: sudo apt-get install dos2unix
       
 #######################################################################
 ## call the realmethods CLI to generate the application
 #######################################################################      
       - run:
           name: Generate the application
-          command: sudo realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> -g ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> -o ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >> -m ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.model-identifier >>
+          command: realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> -g ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> -o ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >> -m ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.model-identifier >>
 
 
   
