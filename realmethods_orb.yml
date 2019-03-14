@@ -32,11 +32,11 @@ commands:
 
       - run:
           name: Establish SUDO env variable requirement
-          command: '[$EUID == 0] && SUDO="" || SUDO="sudo"'
+          command: '[$EUID == 0] && SUDO="not-sudo" || SUDO="sudo"'
 
       - run:
           name: echo SUDO env
-          command: 'echo SUDO'
+          command: 'echo $SUDO'
           
       - run:                                                    
           name: update npm
