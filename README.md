@@ -64,6 +64,7 @@ This optional JSON file contains one or more groupings of parameters to control 
 A model identifier can be a model file ([see supported models](http://www.realmethods.com/api.html#supportedmodels)) or the realMethods identifier of a previously used/published model. If this argument is not provided the _modelId_ param of the  _generation-yaml-file_ is used.  
   
 * Learn more [here](http://www.realmethods.com/cli.html#applicationgenerationconfigurationparameters).
+* Learn about [supported models](http://www.realmethods.com/models.html).
 * See an example [here](https://github.com/realmethods-public/orb/blob/master/samples/models/reference_management.xmi)
 
 
