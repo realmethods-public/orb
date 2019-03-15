@@ -23,11 +23,11 @@ jobs:
 ###################################################################
 
 ## Django
-      - realmethods/generate_app:
-          generation-yaml-file: "samples/yamls/generate-django.yml"
-          git-params-file: "samples/git/test.git.yml"
-          app-options-file: "samples/options/remote/Django.options.json"
-          model-identifier: "samples/models/reference_management.xmi"
+##      - realmethods/generate_app:
+##          generation-yaml-file: "samples/yamls/generate-django.yml"
+##          git-params-file: "samples/git/test.git.yml"
+##          app-options-file: "samples/options/remote/Django.options.json"
+##          model-identifier: "samples/models/reference_management.xmi"
 
 ## Angular7          
 ##      - realmethods/generate_app:
@@ -51,11 +51,11 @@ jobs:
 ##          model-identifier: "samples/models/reference_management.xmi"
            
 ## AWS Lambda using MySQL          
-##      - realmethods/generate_app:
-##          generation-yaml-file: "samples/yamls/generate-lambdacore.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/remote/Lambda.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"
+      - realmethods/generate_app:
+          generation-yaml-file: "samples/yamls/generate-lambdacore.yml"
+          git-params-file: "samples/git/test.git.yml"
+          app-options-file: "samples/options/remote/Lambda.options.json"
+          model-identifier: "samples/models/reference_management.xmi"
            
 ## AWS Lambda using MongoDB
 ##      - realmethods/generate_app:
