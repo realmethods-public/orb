@@ -9,6 +9,10 @@ description: |
   AWS Lambda, Google Functions, ASP.NET, Spark Microweb and Struts2. Examples of models, generation YAML files, Git parameter
   files and application options files can be found at https://github.com/realmethods-public/orb.  
   
+  Note: If using one of the AWS Lambda tech stacks, you will have to assign the accesskey and secret key as a project environment 
+  variable.  See https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project for more details.
+  Be sure to name the accesskey USER_AWS_ACCESSKEY and the secretkey USER_AWS_SECRETKEY 
+  
 commands:
 
   initialize:
@@ -20,12 +24,6 @@ commands:
     parameters:
       api-token:
         description: "A user's API token for the realMethods CLI"
-        type: env_var_name
-      aws-accesskey:
-        description: "A user's AWS Access Key, used to deploy generated Lambda functions"
-        type: env_var_name
-       aws-secretkey:
-        description: "A user's AWS Access Key, used to deploy generated Lambda functions"
         type: env_var_name
       
     steps:

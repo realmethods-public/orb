@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  realmethods: realmethods/appgen@1.0.0
+  realmethods: realmethods/appgen@dev:1.0.0
 
 jobs:
   generate-app:
@@ -12,8 +12,6 @@ jobs:
     steps:
       - realmethods/initialize:
           api-token: sny6iLHAH4SMJU1F
-          aws-accesskey: #apply your accesskey if using generaing AWS Lambda functions
-          aws-secretkey: #apply your secretkey if using generaing AWS Lambda functions
 
 ##################################################################
 ## Multiple app generations are included to give an example of
