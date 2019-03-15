@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  realmethods: realmethods/realmethods@dev:0.0.3
+  realmethods: realmethods/appgen@1.0.0
 
 jobs:
   generate-app:
@@ -97,4 +97,4 @@ workflows:
   app-gen-workflow:
     jobs:
       - generate-app
-    
+   
