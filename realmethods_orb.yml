@@ -93,7 +93,7 @@ commands:
 ## call the realmethods CLI to generate the application
 #######################################################################      
       - run:
-          name: Generate the application
+          name: Generating the application
           command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> -g ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> -o ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >> -m ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.model-identifier >>'
 
 
