@@ -21,7 +21,13 @@ commands:
       api-token:
         description: "A user's API token for the realMethods CLI"
         type: env_var_name
-
+      aws-accesskey:
+        description: "A user's AWS Access Key, used to deploy generated Lambda functions"
+        type: env_var_name
+       aws-secretkey:
+        description: "A user's AWS Access Key, used to deploy generated Lambda functions"
+        type: env_var_name
+      
     steps:
 #######################################################################
 ## checkout the relevant files to a directory referenced by
