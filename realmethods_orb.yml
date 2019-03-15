@@ -90,9 +90,6 @@ commands:
       model-identifier:
         description: "Either the realMethods system ID of previous registered model, or the path of a model file"
         type: string
-      app-name:
-        description: "The name to display while being generated"
-        type: string
         
     steps:
       
