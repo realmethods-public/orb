@@ -30,11 +30,11 @@ jobs:
           model-identifier: "samples/models/reference_management.xmi"
 
 ## Angular7          
-##      - realmethods/generate_app:
-##          generation-yaml-file: "samples/yamls/generate-angular.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/remote/Angular7MongoDB.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"          
+      - realmethods/generate_app:
+          generation-yaml-file: "samples/yamls/generate-angular.yml"
+          git-params-file: "samples/git/test.git.yml"
+          app-options-file: "samples/options/remote/Angular7MongoDB.options.json"
+          model-identifier: "samples/models/reference_management.xmi"          
 
 ## ASP.NET          
 ##      - realmethods/generate_app:
@@ -65,11 +65,11 @@ jobs:
 ##          model-identifier: "samples/models/reference_management.xmi"
            
 ## Spring Boot using MySQL          
-##      - realmethods/generate_app:
-##          generation-yaml-file: "samples/yamls/generate-springcore.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/remote/SpringCore.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"
+      - realmethods/generate_app:
+          generation-yaml-file: "samples/yamls/generate-springcore.yml"
+          git-params-file: "samples/git/test.git.yml"
+          app-options-file: "samples/options/remote/SpringCore.options.json"
+          model-identifier: "samples/models/reference_management.xmi"
             
 ## Spring Boot using MongoDB
 ##      - realmethods/generate_app:
