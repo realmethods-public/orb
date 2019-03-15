@@ -86,6 +86,9 @@ commands:
       model-identifier:
         description: "Either the realMethods system ID of previous registered model, or the path of a model file"
         type: string
+      app-name:
+        description: "The name to display while being generated"
+        type: string
         
     steps:
       
@@ -93,7 +96,7 @@ commands:
 ## call the realmethods CLI to generate the application
 #######################################################################      
       - run:
-          name: Generating the application
+          name: Generating application
           command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> -g ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> -o ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >> -m ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.model-identifier >>'
 
 
