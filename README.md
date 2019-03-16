@@ -70,6 +70,8 @@ A model identifier can be a model file ([see supported models](http://www.realme
 
 #### Stack Specific Examples
 
+Note: If using one of the AWS Lambda tech stacks, you will have to assign the access key and secret key as a project level environment variable.  See https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project for more details. Be sure to name the accesskey USER_AWS_ACCESSKEY and name the secretkey USER_AWS_SECRETKEY 
+
 ##### Django
       - realmethods/generate_app:
           generation-yaml-file: "samples/yamls/generate-django.yml"
@@ -98,7 +100,8 @@ A model identifier can be a model file ([see supported models](http://www.realme
           app-options-file: "samples/options/remote/GoogleFunctions.options.json"
           model-identifier: "samples/models/reference_management.xmi"
            
-##### AWS Lambda using MySQL          
+##### AWS Lambda using MySQL       
+   
       - realmethods/generate_app:
           generation-yaml-file: "samples/yamls/generate-lambdacore.yml"
           git-params-file: "samples/git/test.git.yml"
