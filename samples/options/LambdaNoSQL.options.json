@@ -23,7 +23,7 @@
 [{"name":"accessKey","value":"ADD_KEY_HERE","required":"true"},
 {"name":"secretKey","value":"ADD_SECRETKEY_HERE","required":"true"},
 {"name":"s3Bucket","value":"realmethodsdemobucket","required":"true"},
-{"name":"region","value":"us-east-2","required":"true"},
+{"name":"region","value":"us-east-1","required":"true"},
 {"name":"runtime","value":"java8","required":"true"},
 {"name":"lambdaRoleArn","value":"arn:aws:iam::110777515443:role/service-role/myRoleName","required":"true"},
 {"name":"timeout","value":"30","required":"true"},
