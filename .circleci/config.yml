@@ -50,20 +50,6 @@ jobs:
 ##          app-options-file: "samples/options/remote/GoogleFunctions.options.json"
 ##          model-identifier: "samples/models/reference_management.xmi"
            
-## AWS Lambda using MySQL          
-      - realmethods/generate_app:
-          generation-yaml-file: "samples/yamls/generate-lambdacore.yml"
-          git-params-file: "samples/git/test.git.yml"
-          app-options-file: "samples/options/remote/Lambda.options.json"
-          model-identifier: "samples/models/reference_management.xmi"
-           
-## AWS Lambda using MongoDB
-      - realmethods/generate_app:
-          generation-yaml-file: "samples/yamls/generate-lambdanosql.yml"
-          git-params-file: "samples/git/test.git.yml"
-          app-options-file: "samples/options/remote/LambdaNoSQL.options.json"
-          model-identifier: "samples/models/reference_management.xmi"
-           
 ## Spring Boot using MySQL          
 ##      - realmethods/generate_app:
 ##          generation-yaml-file: "samples/yamls/generate-springcore.yml"
@@ -91,6 +77,28 @@ jobs:
 ##          git-params-file: "samples/git/test.git.yml"
 ##          app-options-file: "samples/options/remote/SparkMicroWeb.options.json"
 ##          model-identifier: "samples/models/reference_management.xmi"
+
+#################################################################
+# In order to deploy the generated Lambda functions, the key vars 
+# (USER_AWS_ACCESSKEY and USER_AWS_SECRETKEY) are 
+# read in as env vars for the current project. 
+# Learn how to add these env vars at https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project 
+#################################################################
+            
+## AWS Lambda using MySQL          
+      - realmethods/generate_app:
+          generation-yaml-file: "samples/yamls/generate-lambdacore.yml"
+          git-params-file: "samples/git/test.git.yml"
+          app-options-file: "samples/options/remote/Lambda.options.json"
+          model-identifier: "samples/models/reference_management.xmi"
+           
+## AWS Lambda using MongoDB
+      - realmethods/generate_app:
+          generation-yaml-file: "samples/yamls/generate-lambdanosql.yml"
+          git-params-file: "samples/git/test.git.yml"
+          app-options-file: "samples/options/remote/LambdaNoSQL.options.json"
+          model-identifier: "samples/models/reference_management.xmi"
+           
  
 workflows:
   version: 2

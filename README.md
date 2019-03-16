@@ -70,7 +70,8 @@ A model identifier can be a model file ([see supported models](http://www.realme
 
 #### Stack Specific Examples
 
-Note: If using one of the AWS Lambda tech stacks, you will have to assign the access key and secret key as a project level environment variable.  See https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project for more details. Be sure to name the accesskey USER_AWS_ACCESSKEY and name the secretkey USER_AWS_SECRETKEY 
+Note: If using one of the AWS Lambda tech stacks, you will have to assign the access key and secret key as a project level environment variable.  See https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project for more details. Be sure to name the accesskey USER\_AWS\_ACCESSKEY and name the secretkey USER\_AWS\_SECRETKEY.  Equally important, 
+make sure you have the correct policies assigned for the related user (_AWSCodeDeployRoleForLambda, AWSLambdaExecute, AWSLambdaRole_, etc..)
 
 ##### Django
       - realmethods/generate_app:
