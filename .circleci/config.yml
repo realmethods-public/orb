@@ -58,11 +58,11 @@ jobs:
           model-identifier: "samples/models/reference_management.xmi"
            
 ## AWS Lambda using MongoDB
-##      - realmethods/generate_app:
-##          generation-yaml-file: "samples/yamls/generate-lambdanosql.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/remote/LambdaNoSQL.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"
+      - realmethods/generate_app:
+          generation-yaml-file: "samples/yamls/generate-lambdanosql.yml"
+          git-params-file: "samples/git/test.git.yml"
+          app-options-file: "samples/options/remote/LambdaNoSQL.options.json"
+          model-identifier: "samples/models/reference_management.xmi"
            
 ## Spring Boot using MySQL          
 ##      - realmethods/generate_app:
