@@ -105,6 +105,3 @@ workflows:
   app-gen-workflow:
     jobs:
       - generate-app
-        filters:
-          tags:
-            only: ${aib.getParam("git.tag")}        
