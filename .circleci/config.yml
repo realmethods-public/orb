@@ -20,9 +20,7 @@ jobs:
 ##
 ## Learn more about configuration files and settings at:
 ## https://www.realmethods.com/cli.html#config-files
-###################################################################
-
- 
+################################################################### 
 ## Spark Microweb using MySQL
       - realmethods/generate_app:
           generation-yaml-file: "samples/yamls/generate-sparkmicroweb.yml"
