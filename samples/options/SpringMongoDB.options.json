@@ -20,7 +20,7 @@
 {"name":"licenseScopes","value":"compile,runtime","required":"false"},
 {"name":"violationRecipients","value":"","required":"false"}],
 "application":
-[{"name":"name","value":"spring_mongodb_demo_jfrog","required":"true"},
+[{"name":"name","value":"spring_mongodb_demo","required":"true"},
 {"name":"description","value":"Spring MongoDB Demo","required":"false"},
 {"name":"author","value":"dev@realmethods.com","required":""},
 {"name":"corporate logo URL","value":"","required":""},
