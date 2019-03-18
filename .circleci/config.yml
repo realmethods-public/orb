@@ -22,6 +22,13 @@ jobs:
 ## https://www.realmethods.com/cli.html#config-files
 ###################################################################
 
+## Spring Boot using MongoDB
+      - realmethods/generate_app:
+          generation-yaml-file: "samples/yamls/generate-springnosql.yml"
+          git-params-file: "samples/git/test.git.yml"
+          app-options-file: "samples/options/SpringMongoDB.options.json"
+          model-identifier: "samples/models/reference_management.xmi"
+
 ## Django
       - realmethods/generate_app:
           generation-yaml-file: "samples/yamls/generate-django.yml"
