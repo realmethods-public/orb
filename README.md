@@ -10,7 +10,7 @@ The realMethods Orb is a simple, yet powerful way for you to leverage CircleCI t
 
 #### Orb Declaration
     orbs:
-    realmethods: realmethods/appgen@1.0.0
+    realmethods: realmethods/appgen@1.0.1
 
 #### Job Declaration
     jobs:

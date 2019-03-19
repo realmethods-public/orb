@@ -3,13 +3,20 @@
 version: 2.1
 
 description: |
-  A CircleCI Orb to invoke the realMethods Application Generation Platform to generate MVP quality applications based on a single business model and one of realMethods supported technology stacks.  
+  A CircleCI Orb to invoke the realMethods Application Generation Platform 
+  to generate MVP quality applications based on a single business model and 
+  one of realMethods supported technology stacks.
   
-  Model format support includes UML, XMI, Eclipse Model Framework, and SQL Scripts.  
+  Model format support includes:
+  UML, XMI, Eclipse Model Framework, and SQL Scripts.  
   
-  Supported technology stacks include Angular7, Django, Spring Boot, AWS Lambda, Google Functions, ASP.NET, Spark Microweb and Struts2. 
+  Supported technology stacks include:
+  Angular7, Django, Spring Boot, AWS Lambda, 
+  Google Functions, ASP.NET, Spark Microweb and Struts2. 
   
-  Examples of models, generation YAML files, Git parameter files and application options files can be found at https://github.com/realmethods-public/orb.  
+  More details and example files can be found at 
+  
+  https://github.com/realmethods-public/orb
  
 commands:
 
@@ -21,7 +28,7 @@ commands:
       at https://github.com/realmethods-public/orb.
     parameters:
       api-token:
-        description: "A user's API token for the realMethods CLI"
+        description: "A user's realMethods API token"
         type: env_var_name
       
     steps:
