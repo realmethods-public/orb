@@ -10,7 +10,7 @@ description: |
   Supported technology stacks include Angular7, Django, Spring Boot, AWS Lambda, Google Functions, ASP.NET, Spark Microweb and Struts2. 
   
   Examples of models, generation YAML files, Git parameter files and application options files can be found at https://github.com/realmethods-public/orb.  
-  
+ 
 commands:
 
   initialize:
