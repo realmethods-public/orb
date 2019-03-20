@@ -32,7 +32,7 @@ Click [here](http://www.realmethods.com/developer.html) to create an account and
 
 ## Application Generation Configuration Examples 
 
-To invoke application generation, one mandatory file is required, along with three optional files the mandatory file can reference.  If any of the option files is included as an input argument, the related internal reference of the mandatory is ignored. 
+To invoke application generation, one mandatory file is required, along with three optional files the mandatory file can reference.  If any of the option files is included as an input argument, the related internal reference of the mandatory is ignored. __These files are referenced from the root of your Git repository since they are being accessed from the Orb__.
 
 Visit [https://github.com/realmethods-public/orb](https://github.com/realmethods-public/orb) to view all sample model and config files.
 
