@@ -69,8 +69,7 @@ commands:
 
   generate_app:
     description: |
-      Command to generate an application by providing a generation YAML file, model file, 
-      Git parameters in a file, and app options in a JSON file.
+      Command to generate an application by providing a generation YAML file, model file, Git parameters in a file, and app options in a JSON file.
     parameters:
       generation-yaml-file:
         description: "YAML file containing the application generation directives"
@@ -95,7 +94,5 @@ commands:
           name: Generating application
           command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >> -g ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.git-params-file >> -o ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.app-options-file >> -m ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.model-identifier >>'
 
-
-  
 
   
