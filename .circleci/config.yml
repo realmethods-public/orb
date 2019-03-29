@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - realmethods/initialize:
-          api-token: sny6iLHAH4SMJU1F
+          api-token: sny6iLHAH4SMJU1F # YOUR_TOKEN_HERE : this test token will work, but you will want to replace it with your token 
 
 ##################################################################
 ## Multiple app generations are included to give an example of
