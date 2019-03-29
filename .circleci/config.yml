@@ -7,7 +7,7 @@ jobs:
   generate-app:
   
     docker:
-      - image: 'circleci/node:8.12.0'
+      - image: 'circleci/node:latest'
 
     steps:
       - realmethods/initialize:
