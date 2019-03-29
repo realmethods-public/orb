@@ -16,7 +16,7 @@ The realMethods Orb is a simple, yet powerful way for you to leverage CircleCI t
     jobs:
       generate-app:
         docker:
-          - image: 'circleci/node:8.12.0-jessie'
+          - image: 'circleci/node:latest'
         steps:
           - realmethods/initialize:
               api-token: "PUT_YOUR_API_TOKEN_HERE"
