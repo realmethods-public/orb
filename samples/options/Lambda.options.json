@@ -53,9 +53,9 @@
 {"name":"contact url","value":"","required":"false"},
 {"name":"license url","value":"http://www.apache.org/licenses/LICENSE-2.0.html","required":"false"},
 {"name":"license name","value":"Apache 2.0","required":"false"},
-{"name":"title","value":"Google Functions Swagger","required":"false"},
+{"name":"title","value":"Lambda Functions Swagger","required":"false"},
 {"name":"version","value":"v1.0","required":"false"},
-{"name":"description","value":"Swagger file for Google Functions","required":"false"},
+{"name":"description","value":"Swagger file for Lambda Functions","required":"false"},
 {"name":"terms of service","value":"","required":"false"},
 {"name":"output formats","value":"json","required":"false"}],
 "hibernate":
