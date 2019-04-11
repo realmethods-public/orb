@@ -29,7 +29,7 @@
 {"name":"version","value":"0.0.1","required":"true"},
 {"name":"package name","value":"com.occulue","required":"true"}],
 "hibernate":
-[{"name":"hibernate.connection.driver_class","value":"com.mysql.jdbc.Driver","required":"true"},
+[{"name":"hibernate.connection.driver_class","value":"com.mysql.cj.jdbc.Driver","required":"true"},
 {"name":"hibernate.connection.username","value":"root","required":"true"},
 {"name":"hibernate.connection.password","value":"6969Cutlass!!","required":"true"},
 {"name":"hibernate.dialect","value":"org.hibernate.dialect.MySQL8Dialect","required":"true"},

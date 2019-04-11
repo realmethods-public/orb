@@ -59,7 +59,7 @@
 {"name":"terms of service","value":"","required":"false"},
 {"name":"output formats","value":"json","required":"false"}],
 "hibernate":
-[{"name":"hibernate.connection.driver.class","value":"com.mysql.jdbc.Driver","required":"true"},
+[{"name":"hibernate.connection.driver.class","value":"com.mysql.cj.jdbc.Driver","required":"true"},
 {"name":"hibernate.connection.username","value":"root","required":"true"},
 {"name":"hibernate.connection.password","value":"6969Cutlass!!","required":"true"},
 {"name":"hibernate.dialect","value":"org.hibernate.dialect.MySQL8Dialect","required":"true"},

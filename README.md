@@ -67,6 +67,14 @@ A model identifier can be a model file ([see supported models](http://www.realme
 * Learn about [supported models](http://www.realmethods.com/models.html).
 * See an example [here](https://github.com/realmethods-public/orb/blob/master/samples/models/reference_management.xmi)
 
+#### Known Issue
+	
+During the first run of a build, from time to time the following issues has been observed:
+	
+``Cannot find a job named build to run in the jobs: section of your configuration file.  If you expected a workflow to run, check your config contains a top-level key called workflows:``
+
+The problem appears to be quickly fixed if the config.yml file in the repository is touched (e.g. by making a whitespace only change).
+[Read more](https://discuss.circleci.com/t/if-you-expected-a-workflow-to-run-check-your-config-contains-a-top-level-key-called-workflows/16798) in this related CircleCI thread
 
 #### Stack Specific Examples
 
