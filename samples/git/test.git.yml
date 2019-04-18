@@ -1,4 +1,11 @@
 gitParams:
+    - name:          Bitbucket_test_Django
+      username:      realmethods-public
+      password:      6969Cutlass!!
+      repository:    Django
+      tag:           latest
+      host:          Bitbucket.org
+      
     - name:          Bitbucket_test_ASPNETCore
       username:      realmethods-public
       password:      6969Cutlass!!
@@ -24,13 +31,6 @@ gitParams:
       username:      realmethods-public
       password:      6969Cutlass!!
       repository:    Angular7MongoDB
-      tag:           latest
-      host:          Bitbucket.org
-
-    - name:          Bitbucket_test_Django
-      username:      realmethods-public
-      password:      6969Cutlass!!
-      repository:    Django-Demo
       tag:           latest
       host:          Bitbucket.org
 
