@@ -22,6 +22,13 @@ jobs:
 ## https://www.realmethods.com/cli.html#config-files 
 ###################################################################
 
+## Django
+      - realmethods/generate_app:
+          generation-yaml-file: "samples/yamls/generate-django.yml"
+          git-params-file: "samples/git/test.git.yml"
+          app-options-file: "samples/options/Django.options.json"
+          model-identifier: "samples/models/reference_management.xmi"
+
 ## Spring Boot using MongoDB
       - realmethods/generate_app:
           generation-yaml-file: "samples/yamls/generate-springnosql.yml"
@@ -29,12 +36,6 @@ jobs:
           app-options-file: "samples/options/SpringMongoDB.options.json"
           model-identifier: "samples/models/reference_management.xmi"
 
-## Django
-      - realmethods/generate_app:
-          generation-yaml-file: "samples/yamls/generate-django.yml"
-          git-params-file: "samples/git/test.git.yml"
-          app-options-file: "samples/options/Django.options.json"
-          model-identifier: "samples/models/reference_management.xmi"
            
 ## Spark Microweb using MySQL
       - realmethods/generate_app:
