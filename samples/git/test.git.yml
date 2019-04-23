@@ -2,7 +2,7 @@ gitParams:
     - name:          Bitbucket_test_Django
       username:      realmethods-public
       password:      6969Cutlass!!
-      repository:    Django
+      repository:    Django-Orb-Demo-01
       tag:           latest
       host:          Bitbucket.org
       
