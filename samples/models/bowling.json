@@ -5,8 +5,10 @@
 	"classes":[
 		{"name":"Alley","parentName":"","packageName":"","interfaces":"[]",
 			"attributes":[
-				{"name":"name","type":"String","visibility":"protected","primarykey":false,"defaultValue":""},
-				{"name":"alleyId","type":"Long","visibility":"protected","primarykey":true,"defaultValue":"null"}],
+				{"name":"name","type":"String",
+					"visibility":"protected","primarykey":false,"defaultValue":""},
+				{"name":"alleyId","type":"Long",
+						"visibility":"protected","primarykey":true,"defaultValue":"null"}],
 			"associations":[
 				{"name":"Leagues","type":"League","multiplicity":"OneToMany"},
 				{"name":"Tournaments","type":"Tournament","multiplicity":"OneToMany"},
@@ -14,8 +16,11 @@
 			"methods":[]},
 		{"name":"Game","parentName":"","packageName":"","interfaces":"[]",
 			"attributes":[
-				{"name":"frames","type":"java.lang.Integer","visibility":"protected","primarykey":false,"defaultValue":"new java.lang.Integer(\"0\")"},
-				{"name":"gameId","type":"Long","visibility":"protected","primarykey":true,"defaultValue":"null"}],
+				{"name":"frames","type":"java.lang.Integer",
+					"visibility":"protected","primarykey":false,
+					"defaultValue":"0"},
+				{"name":"gameId","type":"Long","visibility":"protected",
+						"primarykey":true,"defaultValue":"null"}],
 			"associations":[
 				{"name":"Matchup","type":"Matchup","multiplicity":"ManyToOne"},
 				{"name":"Player","type":"Player","multiplicity":"OneToOne"}],
