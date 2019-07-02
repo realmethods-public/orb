@@ -36,8 +36,6 @@ To invoke application generation, one mandatory file is required, along with thr
 
 Visit [https://github.com/realmethods-public/orb](https://github.com/realmethods-public/orb) to view all sample model and config files.
 
-[Click here](https://www.realmethods.com/cli.html#config-files) to learn more about configuration files and settings.
-
 
 #### generation-yaml-file (__mandatory__):
   
@@ -50,21 +48,18 @@ This YAML file contains the directives required to generate an application using
     
 This optional YAML file contains one or more groupings of parameters to control committing an application's files (language   specific source code, build files, config files, CI/CD files, etc..) to a Git repository. If this argument is not provided, the _gitParams-->file_ param of the _generation-yaml-file_ is used.  
   
-* Learn more [here](http://www.realmethods.com/cli.html#http://www.realmethods.com/cli.html#githubconfigurationparameters).
 * See an example [here](https://github.com/realmethods-public/orb/blob/master/samples/git/test.git.yml)
 
 #### app-options-file (__optional__):  
   
 This optional JSON file contains one or more groupings of parameters to control application generation flow and actual output. This file is where you would provide such things as database access params, application params (name, description, etc..), and so forth. If this argument is not provided the _appOptionsFile_ param of the _generation-yaml-file_ is used.  
   
-* Learn more [here](http://www.realmethods.com/cli.html#http://www.realmethods.com/cli.html#appconfigurationparameters).
 * See an example [here](https://github.com/realmethods-public/orb/blob/master/samples/options/Django.options.json)
 
 #### model-identifier (__optional__):  
 A model identifier can be a model file ([see supported models](http://www.realmethods.com/api.html#supportedmodels)) or the realMethods identifier of a previously used/published model. If this argument is not provided the _modelId_ param of the  _generation-yaml-file_ is used.  
   
-* Learn more [here](http://www.realmethods.com/cli.html#applicationgenerationconfigurationparameters).
-* Learn about [supported models](http://www.realmethods.com/models.html).
+* Learn about [supported models](https://realmethods.com/home/models/).
 * See an example [here](https://github.com/realmethods-public/orb/blob/master/samples/models/reference_management.xmi)
 
 #### Known Issue
