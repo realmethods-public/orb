@@ -2,7 +2,7 @@
 
 ![alt text](http://www.realmethods.com/img/_circleci_realmethods_orb_.png)
 
-The realMethods Orb is a simple, yet powerful way for you to leverage CircleCI to automate the generation of any DevOps project including MVP-quality source code that can be deployed to, tested, and run through your CI/CD pipeline on CircleCI.
+Looking for more than Hello World?  The realMethods Orb is a simple, yet powerful way for you to leverage CircleCI to automate the generation of any DevOps project including MVP-quality source code that can be deployed to, tested, and run through your CI/CD pipeline on CircleCI.
 
 
 #### Version
