@@ -1,17 +1,18 @@
 version: 2.1
 
 orbs:
-  realmethods: realmethods/appgen@1.0.1
+  realmethods: realmethods/appgen@2.0.0
 
 jobs:
-  generate-app:
+  generate-devops-project:
   
     docker:
       - image: 'circleci/node:latest'
 
     steps:
       - realmethods/initialize:
-          api-token: DsJqTpYht3LcKb80 # YOUR_TOKEN_HERE : this test token will work for all CircleCI usage, but you can replace it with your token 
+          api-token: DsJqTpYht3LcKb80 # YOUR_TOKEN_HERE : this CircleCI user token will work for all CircleCI usage, 
+                                      # but you can replace it with your token as a registered user on platform.realmethods.com 
 
 ##################################################################
 ## Multiple app generations are included to give an example of
@@ -22,69 +23,48 @@ jobs:
 ## https://realmethods.com/home/command-line-interface/ 
 ###################################################################
 
-## Django
-      - realmethods/generate_app:
-          generation-yaml-file: "samples/yamls/generate-django.yml"
-          git-params-file: "samples/git/test.git.yml"
-          app-options-file: "samples/options/Django.options.json"
-          model-identifier: "samples/models/reference_management.xmi"
+## Apollo GraphQL
+##      - realmethods/generate_devops_project:
+##          generation-yaml-file: "samples/yamls/project.as.code/apollo-project-as-code.yml"
 
-## Spring Boot using MongoDB
-##      - realmethods/generate_app:
-##          generation-yaml-file: "samples/yamls/generate-springnosql.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/SpringMongoDB.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"
-
-           
-## Spark Microweb using MySQL
-##      - realmethods/generate_app:
-##          generation-yaml-file: "samples/yamls/generate-sparkmicroweb.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/SparkMicroWeb.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"
-
-# Google Functions          
-##      - realmethods/generate_app:
-##         generation-yaml-file: "samples/yamls/generate-googlefunctions.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/GoogleFunctions.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"
-##           
-## Spring Boot using MySQL          
-##      - realmethods/generate_app:
-##          generation-yaml-file: "samples/yamls/generate-springcore.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/SpringCore.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"
-
-## Struts2 using MySQL
-##      - realmethods/generate_app:
-##          generation-yaml-file: "samples/yamls/generate-struts2.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/Struts2.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"
-
-## Spring Boot using MongoDB
-##      - realmethods/generate_app:
-##          generation-yaml-file: "samples/yamls/generate-springnosql.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/SpringMongoDB.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"
-  
 ## Angular7          
-##      - realmethods/generate_app:
-##          generation-yaml-file: "samples/yamls/generate-angular.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/Angular7MongoDB.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"          
+##      - realmethods/generate_devops_project:
+##          generation-yaml-file: "samples/yamls/project.as.code/angular-project-as-code.yml"
 
 ## ASP.NET          
-##      - realmethods/generate_app:
-##          generation-yaml-file: "samples/yamls/generate-aspdotnet.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/ASPNETCore.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"
+##      - realmethods/generate_devops_project:
+##          generation-yaml-file: "samples/yamls/project.as.code/aspdotnet-project-as-code.yml"
+
+## Django
+      - realmethods/generate_devops_project:
+          generation-yaml-file: "samples/yamls/project.as.code/django-project-as-code.yml"
+
+## Spring Boot using MongoDB
+##      - realmethods/generate_devops_project:
+##          generation-yaml-file: "samples/yamls/project.as.code/springboot-mongodb-project-as-code.yml"
+
+##           
+## Spring Boot using MySQL          
+##      - realmethods/generate_devops_project:
+##          generation-yaml-file: "samples/yamls/project.as.code/springboot-rdbms-project-as-code.yml"
+
+## Spring Boot using MongoDB
+##      - realmethods/generate_devops_project:
+##          generation-yaml-file: "samples/yamls/project.as.code/springboot-mongodb-project-as-code.yml"
+           
+## Spark Microweb using MySQL
+##      - realmethods/generate_devops_project:
+##          generation-yaml-file: "samples/yamls/project.as.code/sparkmicroweb-project-as-code.yml"
+
+# Google Functions          
+##      - realmethods/generate_devops_project:
+##         generation-yaml-file: "samples/yamls/project.as.code/googlefunctions-project-as-code.yml"
+
+
+## Struts2 using MySQL
+##      - realmethods/generate_devops_project:
+##          generation-yaml-file: "samples/yamls/project.as.code/struts-rdbms-project-as-code.yml"
+  
           
 #################################################################
 # In order to deploy the generated Lambda functions, the key vars 
@@ -95,21 +75,15 @@ jobs:
 #################################################################
             
 ## AWS Lambda using MySQL          
-##      - realmethods/generate_app:
-##          generation-yaml-file: "samples/yamls/generate-lambdacore.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/Lambda.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"
+##      - realmethods/generate_devops_project:
+##          generation-yaml-file: "samples/yamls/project.as.code/generate-lambdacore.yml"
            
 ## AWS Lambda using MongoDB
-##      - realmethods/generate_app:
-##          generation-yaml-file: "samples/yamls/generate-lambdanosql.yml"
-##          git-params-file: "samples/git/test.git.yml"
-##          app-options-file: "samples/options/LambdaNoSQL.options.json"
-##          model-identifier: "samples/models/reference_management.xmi"
+##      - realmethods/generate_devops_project:
+##          generation-yaml-file: "samples/yamls/project.as.code/generate-lambdanosql.yml"
  
 workflows:
   version: 2
-  app-gen-workflow:
+  project-generations-workflow:
     jobs:
-      - generate-app
+      - generate-devops-project
