@@ -1,0 +1,29 @@
+entities:
+    - name: "Company"
+      data:
+          - name: "name"
+          - name: "type"
+            type: "CompanyType"
+      relations:
+          - name: "employees"
+            type: "Employee"
+            multiplicity: "OneToMany"
+          - name: "address"
+            type: "Address"
+            multiplicity: "OneToOne"
+    - name: "Employee"
+      data:
+          - name: "firstName"
+          - name: "lastName"              
+    - name: "Address"
+      data:
+          - name: "street"
+          - name: "city"
+          - name: "state"
+          - name: "zipCode"
+enums:
+    - name: "CompanyType"
+      data:
+          - name: "S_Corp"
+          - name: "LLC"
+          - name: "C_Corp"
